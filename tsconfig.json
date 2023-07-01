@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "declaration": true,
-    "declarationDir": "dist",
     "emitDeclarationOnly": true,
     "lib": ["dom", "es2019"],
     "rootDir": "."
