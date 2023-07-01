@@ -21,6 +21,7 @@
     "svelte": "^3.59.2"
   },
   "devDependencies": {
-    "@replit-svelte/types": "^1.0.7"
+    "@replit-svelte/types": "^1.0.7",
+    "prettier": "^2.8.8"
   }
 }
