@@ -1,0 +1,28 @@
+{
+  "name": "@replit-svelte/utils",
+  "version": "1.0.0",
+  "description": "Other utils for replit-svelte.",
+  "types": "index.d.ts",
+  "type": "module",
+  "files": [
+    "index.ts",
+    "index.d.ts",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "replit",
+    "svelte",
+    "types",
+    "typescript"
+  ],
+  "author": "LuisAFK <soy.lafk+npm@gmail.com> (https://luisafk.repl.co)",
+  "peerDependencies": {
+    "svelte": "^3.59.2"
+  },
+  "devDependencies": {
+    "@replit-svelte/types": "^1.0.7"
+  }
+}
