@@ -1,8 +1,9 @@
 {
   "name": "@replit-svelte/utils",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Other utils for replit-svelte.",
   "types": "index.d.ts",
+  "main": "index.ts",
   "type": "module",
   "files": [
     "index.ts",
