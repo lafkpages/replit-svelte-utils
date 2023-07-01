@@ -1,5 +1,5 @@
 import { Roles } from '@replit-svelte/types';
-import type { Variant, RawUser, Role, User } from '@replit-svelte/types';
+import type { Variant, RawUser, Role, User, Modal, ModalEvent } from '@replit-svelte/types';
 
 export const evalbot =
   'https://i0.wp.com/replit.com/public/images/evalbot/evalbot_29.png';
@@ -55,4 +55,24 @@ export function hasRole(user: User | null, roleToFind: string | Role) {
   }
 
   return user.roles.some((role: Role) => role.id == roleToFind);
+}
+
+export default function showModal(modal: Modal) {
+  const event: ModalEvent = new CustomEvent('showModal', {
+    detail: modal
+  });
+
+  window?.dispatchEvent(event);
+
+  return event;
+}
+
+export function showCreateReplModal() {
+  const event: ModalEvent = new CustomEvent('showModal', {
+    detail: 'createReplModal'
+  });
+
+  window?.dispatchEvent(event);
+
+  return event;
 }
