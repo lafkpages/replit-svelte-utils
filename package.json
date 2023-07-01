@@ -9,7 +9,9 @@
     "index.d.ts",
     "README.md"
   ],
-  "scripts": {},
+  "scripts": {
+    "format": "prettier --write ."
+  },
   "keywords": [
     "replit",
     "svelte",
