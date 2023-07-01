@@ -1,5 +1,5 @@
 import { Roles } from '@replit-svelte/types';
-import type { Variant, RawUser, Role, User, Modal, ModalEvent } from '@replit-svelte/types';
+import type { Variant, RawUser, Role, User, Modal, ModalEvent, Toast, ToastEvent } from '@replit-svelte/types';
 
 export const evalbot =
   'https://i0.wp.com/replit.com/public/images/evalbot/evalbot_29.png';
@@ -70,6 +70,16 @@ export default function showModal(modal: Modal) {
 export function showCreateReplModal() {
   const event: ModalEvent = new CustomEvent('showModal', {
     detail: 'createReplModal'
+  });
+
+  window?.dispatchEvent(event);
+
+  return event;
+}
+
+export function showToast(toast: Toast) {
+  const event: ToastEvent = new CustomEvent('showToast', {
+    detail: toast
   });
 
   window?.dispatchEvent(event);
