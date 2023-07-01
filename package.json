@@ -9,9 +9,7 @@
     "index.d.ts",
     "README.md"
   ],
-  "scripts": {
-    "test": "node test.js"
-  },
+  "scripts": {},
   "keywords": [
     "replit",
     "svelte",
