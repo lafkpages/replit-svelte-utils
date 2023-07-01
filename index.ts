@@ -1,21 +1,30 @@
-import { Roles } from '@replit-svelte/types';
-import type { Variant, RawUser, Role, User, Modal, ModalEvent, Toast, ToastEvent } from '@replit-svelte/types';
+import { Roles } from "@replit-svelte/types";
+import type {
+  Variant,
+  RawUser,
+  Role,
+  User,
+  Modal,
+  ModalEvent,
+  Toast,
+  ToastEvent,
+} from "@replit-svelte/types";
 
 export const evalbot =
-  'https://i0.wp.com/replit.com/public/images/evalbot/evalbot_29.png';
+  "https://i0.wp.com/replit.com/public/images/evalbot/evalbot_29.png";
 
 export const roleIdToKey = Object.fromEntries(
   Object.entries(Roles).map(([k, v]) => [v, k])
 );
 
 export const roleColors = {
-  '1': 'yellow',
-  '2': 'blue',
-  '3': 'pink'
+  "1": "yellow",
+  "2": "blue",
+  "3": "pink",
 };
 
 export const roleNames = {
-  '3': 'Early Access'
+  "3": "Early Access",
 };
 
 export function getRoleName(id: string): string | null {
@@ -23,15 +32,15 @@ export function getRoleName(id: string): string | null {
 }
 
 export function getRoleColor(id: string): Variant {
-  return roleColors[id] || 'grey';
+  return roleColors[id] || "grey";
 }
 
 export function parseRawRoleIds(raw: string | RawUser) {
-  if (typeof raw != 'string') {
+  if (typeof raw != "string") {
     raw = raw.roles;
   }
 
-  return raw?.split(',').filter((role) => role) || [];
+  return raw?.split(",").filter((role) => role) || [];
 }
 
 export function parseRawRoles(raw: string | RawUser): Role[] {
@@ -41,7 +50,7 @@ export function parseRawRoles(raw: string | RawUser): Role[] {
     id: roleId,
     key: roleIdToKey[roleId],
     name: getRoleName(roleId),
-    color: getRoleColor(roleId)
+    color: getRoleColor(roleId),
   }));
 }
 
@@ -50,7 +59,7 @@ export function hasRole(user: User | null, roleToFind: string | Role) {
     return false;
   }
 
-  if (typeof roleToFind != 'string') {
+  if (typeof roleToFind != "string") {
     roleToFind = roleToFind.id;
   }
 
@@ -58,8 +67,8 @@ export function hasRole(user: User | null, roleToFind: string | Role) {
 }
 
 export default function showModal(modal: Modal) {
-  const event: ModalEvent = new CustomEvent('showModal', {
-    detail: modal
+  const event: ModalEvent = new CustomEvent("showModal", {
+    detail: modal,
   });
 
   window?.dispatchEvent(event);
@@ -68,8 +77,8 @@ export default function showModal(modal: Modal) {
 }
 
 export function showCreateReplModal() {
-  const event: ModalEvent = new CustomEvent('showModal', {
-    detail: 'createReplModal'
+  const event: ModalEvent = new CustomEvent("showModal", {
+    detail: "createReplModal",
   });
 
   window?.dispatchEvent(event);
@@ -78,8 +87,8 @@ export function showCreateReplModal() {
 }
 
 export function showToast(toast: Toast) {
-  const event: ToastEvent = new CustomEvent('showToast', {
-    detail: toast
+  const event: ToastEvent = new CustomEvent("showToast", {
+    detail: toast,
   });
 
   window?.dispatchEvent(event);
