@@ -66,7 +66,7 @@ export function hasRole(user: User | null, roleToFind: string | Role) {
   return user.roles.some((role: Role) => role.id == roleToFind);
 }
 
-export default function showModal(modal: Modal) {
+export function showModal(modal: Modal) {
   const event: ModalEvent = new CustomEvent("showModal", {
     detail: modal,
   });
