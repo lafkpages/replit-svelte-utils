@@ -11,6 +11,7 @@
     "README.md"
   ],
   "scripts": {
+    "prepublishOnly": "tsc",
     "format": "prettier --write ."
   },
   "keywords": [
