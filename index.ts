@@ -86,6 +86,14 @@ export function showCreateReplModal() {
   return event;
 }
 
+export function closeModal() {
+  const event: ModalEvent = new CustomEvent("closeModal");
+
+  window?.dispatchEvent(event);
+
+  return event;
+}
+
 export function showToast(toast: Toast) {
   const event: ToastEvent = new CustomEvent("showToast", {
     detail: toast,
